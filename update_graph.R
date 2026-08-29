@@ -2,8 +2,9 @@
 
 library(fredr)
 # Pull the FRED key from the GitHub Action environment
-fred_key <- Sys.getenv("FRED_API_KEY")
-fredr_set_key(fred_key)
+#fred_key <- Sys.getenv("FRED_API_KEY")
+#fredr_set_key(fred_key)
+fredr_set_key(Sys.getenv("FRED_API_KEY"))
 
 library(fredr)
 library(tidyverse)
