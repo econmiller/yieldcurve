@@ -1,6 +1,11 @@
 #Economic Forecast  - National, Federal Reserve Bank (FRED)
 
 library(fredr)
+# Pull the FRED key from the GitHub Action environment
+fred_key <- Sys.getenv("FRED_API_KEY")
+fredr_set_key(fred_key)
+
+library(fredr)
 library(tidyverse)
 library(ggplot2)
 library(scales)
