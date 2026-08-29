@@ -18,7 +18,7 @@ jobs:
       # Install required packages
       - name: Install Packages
         run: |
-          Rscript -e 'install.packages(c("dplyr", "ggplot2", "plotly", "htmlwidgets", "fredr"))'
+          Rscript -e 'install.packages(c("tidyverse", "scales", "plotly", "htmlwidgets", "fredr"))'
           
       # Run your script
       - name: Run Script
