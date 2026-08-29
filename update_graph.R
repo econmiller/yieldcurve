@@ -11,12 +11,7 @@ library(ggplot2)
 library(scales)
 library(plotly)
 library(htmlwidgets)
-
-
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path))                     #generic way to make the working directory the folder the program file is in
-
 #######################################################################################################
-
 #Get national data for market yields on treasuries
 
 #Desired series ids
@@ -60,8 +55,6 @@ tbl_fred <- tbl_fred |>
 tdy_fred <- tbl_fred |> 
   pivot_wider(names_from = series_id, values_from = value)                      #create pivot table
 
-write_csv(tdy_fred, file = "..\\Data\\nat_fred.csv", na = "")                   #export pivot table as .csv 
-
 #######################################################################################################
 
 #Graphing monthly yields on treasuries
@@ -89,8 +82,6 @@ g2_tbl_fred <- tbl_fred |>
 # Tell ggplotly to ONLY use your custom 'text' aesthetic for the tooltip
 interactive_g2 <- ggplotly(g2_tbl_fred, tooltip = "text")
 
-# View and save
-interactive_g2
 # Save as a standalone, postable HTML file
-saveWidget(interactive_g2, "C:/Users/mill1707/OneDrive - Michigan State University/TMP/treasury_yields_interactive.html", selfcontained = TRUE)
-
+#saveWidget(interactive_g2, "C:/Users/mill1707/OneDrive - Michigan State University/TMP/treasury_yields_interactive.html", selfcontained = TRUE)
+saveWidget(interactive_g2, "treasury_yields_interactive.html", selfcontained = TRUE)
