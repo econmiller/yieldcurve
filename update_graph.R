@@ -15,8 +15,6 @@ library(htmlwidgets)
 
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))                     #generic way to make the working directory the folder the program file is in
 
-#usethis::edit_r_environ()                                                       #r environment to conceal FRED API KEY (Petrie's key)
-fredr_set_key('45072e9851354a8d4a446e1f94e18a75')
 #######################################################################################################
 
 #Get national data for market yields on treasuries
